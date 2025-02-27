@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ria's polls index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
+</head>
+<body>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul class="sidebar-text-position">
+            <li><a href="/">Index</a></li>
+        </ul>
+    </div>
+    
+    <!-- Latest polls/main content -->
+    <div class="main-content">
+    <h1>Welcome to Ria's polls index</h1>
+    <p>These are the latest polls~</p>
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    <p class="small-text">that's that me espresso~</p>
+    </div>
+</body>
+</html>

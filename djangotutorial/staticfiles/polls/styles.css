@@ -1,0 +1,96 @@
+/* General Reset */
+body {
+    background-color:#000000;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Grande', sans-serif;
+}
+p,ul,li{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Grande', sans-serif;
+}
+
+/* Font for h1 */
+h1 {
+    font-family: 'Agbalumo', sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-left: -10px;
+    font-size: 2.5em; /* Make the title larger */
+    color: #BB85FC; /* Dark text color */
+}
+
+/* Sidebar styles */
+body .sidebar {
+    height: 100%; /* Full height of the page */
+    width: 150px; /* Sidebar width */
+    position: fixed; /* Fix to the left of the screen */
+    top: 0;
+    left: 0;
+    background-color: #121212; /* Dark background for sidebar */
+    color: #FFFFFF; /* White text color */
+    padding-top: 20px; /* Space from the top */
+}
+
+body .sidebar ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+body .sidebar ul li {
+    padding: 10px 15px; /* Padding for each item */
+}
+
+body .sidebar ul li a {
+    color:  #03DAC6; /* Link color */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make the links full-width */
+}
+
+body .sidebar ul li a:hover {
+    color: #6eece0; /* Hover effect */
+}
+
+body ul .sidebar-text-position {
+    position:absolute; 
+    top:40vh; 
+    margin-left:30px;
+    transform:translate(-50%);
+}
+
+/* Main Content Styles */
+body .main-content {
+    color: #FFFFFF;
+    margin-left: 170px; /* Move content to the right to make space for sidebar */
+    padding: 20px;
+}
+
+body .main-content p {
+    font-size: 1.1em;
+}
+
+body .main-content p.small-text {
+    font-size: 0.8em !important;
+    color:#888 !important;
+}
+
+/* Styling for the list of polls */
+body .main-content ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+body .main-content ul li {
+    font-size: 0.9em;
+    padding: 8px 0;
+}
+
+body .main-content ul li a {
+    text-decoration: none;
+    color: #724ad0; /* Dark text for links */
+}
+
+body .main-content ul li a:hover {
+    color: #d0b1f5; /* Change link color on hover */
+}

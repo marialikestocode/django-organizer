@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ria's polls index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'polls/styles.css' %}">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul class="sidebar-text-position">
+            <li><a href="/">Index</a></li>
+        </ul>
+    </div>
+    
+    <!-- Latest polls/main content -->
+    <div class="main-content">
+        <form action="{% url 'polls:vote' question.id %}" method="post">
+        <fieldset>
+            <legend><h2>Question: {{ question.question_text }}</h2></legend>
+            {% if error_message %} <h3>{{ error_message }}</h3>
+            {% endif %}
+            {% for choice in question.choice_set.all %}
+                <input type="radio" name="choice" id="choice{{forloop.counter}}" value="{{choice_id}}">
+                <label for="choice{{ forloop.counter }}">{{choice.choice_text}}</label>
+                <br>
+            {% endfor %}
+        </fieldset>
+        <input type="submit" value="Vote">
+        </form>
+        <p class="small-text">Publication date: {{question.pub_date}}</p>
+    </div>
+    
+</body>
+</html>
